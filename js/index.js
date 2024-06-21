@@ -1,96 +1,150 @@
-// String metodlariga oid masalalar.
+// Massiv va obyektlarga oid masalalar.
 // 1-masala
-// function substringStr(str) {
-//     let res;
-//     res = str.substring(0,5)
 
-//     return res;
-// }
-// console.log(substringStr("Hello, world!"));
+// function test(arg) {
 
-// 3-masala
-// function test(str) {
-//     let res;
-//     res = str.split(" ")
-
-//     for(let i = 0; i < res.length; i++) {
-//        console.log(res[i]);
-//     }
+//    for(let i = 0; i < arg.length; i++) {
+//      console.log(arg[i].name, arg[i].age);
+//    }
 
 //     return ;
 // }
-// console.log(test("Hello world from JavaScript"));
+// console.log(test( [
+//     { name: 'Alice', age: 20, score: 85, status: 'active' },
+//     { name: 'Bob', age: 22, score: 92, status: 'inactive' }
+//   ]
+// ));
+
+// 2-masala
+// function test(arg) {
+//   let res;
+//     res = arg[0].ball
+//     arg.forEach(function(value) {
+//         if(value.ball > res) {
+//             res = value.ball
+//         }
+//     })
+
+//   return res;
+// }
+// console.log(test([
+//     { name: "alex",ball:80},
+//     { name: "olga",ball:85},
+//     { name: "stiwn",ball:88},
+//     { name: "bob",ball:90},
+//     { name: "mark",ball:76},
+// ]));
+
+// 3-masala
+// function test(arg) {
+//   let res;
+
+//   res = arg.filter((value) => {
+//     if (value.name[0] == "A") {
+//       return value;
+//     }
+//   });
+
+//   return res;
+// }
+// console.log(
+//   test([
+//     { name: "Alice", age: 20, score: 85, status: "active" },
+//     { name: "Bob", age: 22, score: 92, status: "inactive" },
+//     { name: "Andrew", age: 23, score: 88, status: "active" },
+//   ])
+// );
 
 // 4-masala
 // function test(arg) {
-//     let res;
-//     res = arg.join(",")
-//     return res;
-// }
-// console.log(test(["Hello", "world", "from", "JavaScript"]));
-
-// 5-masala
-// function test(str) {
-//     let res;
-//     res = str.replaceAll("a","@")
-
-//     return res;
-// }
-// console.log(test("JavaScript"));
-
-// 6-masala
-// const test = (str) => {
-//     let res;
-//     res = str.trim()
-
-//     return res;
-// }
-// console.log(test("   Hello, world!   "));
-
-// 7-masala
-// const test = function (str) {
+//   let summ = 0;
+//   let count = 0;
 //   let res;
-//   res = str.charAt(7);
 
-//   return res;
-// };
-// console.log(test("Hello, world!"));
-
-// 8-masala
-// function test(str) {
-//     let res;
-//     if(str.includes("salom")) {
-//         res = "salom kichik so'zi bor"
-//     } else {
-//         res = "unday so'z yo'q"
+//     for (const i of arg) {
+//         summ = summ + i.score;
+//         count++;
 //     }
 
+//     res = summ / count
+
+//   return res;
+// }
+// console.log(test( [
+//     { name: 'Alice', age: 20, score: 85, status: 'active' },
+//     { name: 'Bob', age: 22, score: 92, status: 'inactive' },
+//     { name: 'Andrew', age: 23, score: 88, status: 'active' }
+//   ]
+// ));
+
+// 5-masala
+// function test(arg) {
+//   let res;
+//     res = arg.find(value => {
+//         return value.name == "John"
+//     })
+
+//   return res;
+// }
+// console.log(test( [
+//     { name: 'Alice', age: 20, score: 85, status: 'active' },
+//     { name: 'John', age: 22, score: 92, status: 'inactive' },
+//     { name: 'Bob', age: 23, score: 88, status: 'active' }
+//   ]
+// ));
+
+// 6-masala
+// function test(arg) {
+//   let res;
+//     res = arg.findIndex(value => {
+//         return value.score > 85
+//     })
+
+//     return res;
+//   }
+// console.log(
+//   test([
+//     { name: "Alice", age: 20, score: 80, status: "active" },
+//     { name: "Bob", age: 22, score: 92, status: "inactive" },
+//     { name: "Charlie", age: 23, score: 85, status: "active" },
+//   ])
+// );
+
+// 7-masala
+// function test(arg) {
+//   let res;
+
+//   res = arg.filter(value => {
+//     return value.status == "active"
+//   });
+
+//   return res;
+// }
+// console.log(
+//   test([
+//     { name: "Alice", age: 20, score: 85, status: "active" },
+//     { name: "Bob", age: 22, score: 92, status: "inactive" },
+//     { name: "Charlie", age: 23, score: 88, status: "active" },
+//   ])
+// );
+
+// 8-masala
+// function test(arg) {
+//     let res;
+//     res = arg.map(value => {
+//         if(value.age > 18) {
+//            return value.yosh = "18 yoshdan katta"
+//         } else {
+//            return value.yosh = "18 yoshdan katta emas"
+//         }
+//     })
+
 //     return res;
 // }
-// console.log(test("salom bolalar"));
-
-// 9-masala
-// function test(str) {
-//   let res;
-//   if(str.startsWith("how")) {
-//     res = "how kichik so'zi bilan boshlanadi"
-//   } else {
-//     res = "undan so'z bilan boshlanmaydi"
-//   }
-
-//   return res;
-// }
-// console.log(test("how old are you"));
-
-// 10-masala
-// function test(str) {
-//   let res;
-//   if (str.endsWith("you")) {
-//     res = "you kichik so'zi bilan tugandi";
-//   } else {
-//     res = "undan so'z bilan tugamanydi";
-//   }
-
-//   return res;
-// }
-// console.log(test("how old are you"));
+// console.log(test( [
+//     { name: 'Alice', age: 20, score: 85, status: 'active' },
+//     { name: 'Bob', age: 22, score: 92, status: 'inactive' },
+//     { name: 'Charlie', age: 17, score: 88, status: 'active' },
+//     { name: 'Alex', age: 19, score: 90, status: 'inactive' }
+//   ]
+// ));
